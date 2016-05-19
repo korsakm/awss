@@ -1,0 +1,8 @@
+---
+- hosts: photo_upload
+  tasks:
+    - name: "install git"
+      yum: name=git state=latest
+      become: yes
+    - name: "sycronize repository"
+      git: repo=https://github.com/korsakm/awss.git dest=~/photo_upload
