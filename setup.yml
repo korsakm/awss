@@ -6,3 +6,5 @@
       become: yes
     - name: "sycronize repository"
       git: repo=https://github.com/korsakm/awss.git dest=~/photo_upload
+    - file: path=~/.aws state=directory
+    - copy: src=aws.config dest=~/.aws/config
